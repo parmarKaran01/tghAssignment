@@ -36,7 +36,7 @@ const Home = () => {
   }, [selectedTag]);
 
   return (
-    <div className="w-full h-full flex items-center justify-center pt-[3rem] flex-col">
+    <div className="w-full h-full flex items-center justify-center pt-[3rem] flex-col px-4">
       <Quote quote={quote} />
       <Dropdown selectedTag={selectedTag} setSelectedTag={setSelectedTag} />
       <Button onClick={() => getRandomQuote()} />
