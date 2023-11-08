@@ -14,7 +14,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/bookmark" element={<Bookmark />} />
+          <Route path="/bookmarks" element={<Bookmark />} />
         </Routes>
       </div>
     </BrowserRouter>
