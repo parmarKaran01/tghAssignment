@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { baseURL } from "../constants";
+import downarrow from "../assets/downarrow.svg"
+import uparrow from "../assets/uparrow.svg"
 
 const Dropdown = ({ selectedTag, setSelectedTag }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [optionArr, setOptionArr] = useState([]);
+  
   const toggle = () => {
     setIsOpen(!isOpen);
   };
@@ -21,6 +24,7 @@ const Dropdown = ({ selectedTag, setSelectedTag }) => {
 
   useEffect(() => {
     getTags();
+
   }, []);
 
   const handleSelect = (tag) => {
@@ -30,11 +34,12 @@ const Dropdown = ({ selectedTag, setSelectedTag }) => {
   console.log("selected", selectedTag);
   return (
     <div
-      className="mt-[3rem] min-w-[200px] bg-slate-400 rounded-[30px] p-4 px-6"
+      className="mt-[3rem] min-w-[200px] bg-[#D9D9D9] rounded-[30px] p-2 px-6 shadow-lg text-slate-900"
       onClick={toggle}
     >
-      <div value={selectedTag} className="flex items-center h-6">
-        {selectedTag}
+      <div value={selectedTag} className="flex items-center h-6 relative">
+        <span>{selectedTag}</span>
+        <img src={ isOpen ? uparrow : downarrow } alt="downIcon" className="w-4 h-4 absolute right-1"/>
       </div>
       {isOpen ? (
         <ul className="mt-4 max-h-[200px] overflow-y-scroll">
