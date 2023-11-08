@@ -14,7 +14,7 @@ const Bookmark = () => {
   }, [])
   console.log("quotes", quotes);
   return (
-    <div className="w-full overflow-x-hidden flex items-center justify-center pt-[3rem] flex-col gap-[1rem] px-4">
+    <div className="w-full overflow-x-hidden flex items-center justify-center pt-[3rem] flex-col gap-[1rem] p-4">
       {quotes.map((item) => (
         <Quote key={item._id} quote={item} isBookmark={true} />
       ))}
